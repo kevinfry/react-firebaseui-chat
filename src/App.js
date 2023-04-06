@@ -1,27 +1,58 @@
 import './App.css';
+import Signin from './components/Signin';
+import { createBrowserRouter, RouterProvider, Outlet, } from 'react-router-dom';
+import AuthProvider from './Firebase/context';
+import {Landing} from "./components/Landing";
+import {ChatRoom} from "./components/ChatRoom";
+import React from "react";
+import Welcome from "./components/Welcome";
+import Privacy from "./components/Privacy";
+import Contact from "./components/Contact";
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <NavbarWrapper />,
+    children: [
+      {
+        path: '/signin',
+        element: <Signin />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
+      },
+      {
+        path: '/privacy',
+        element: <Privacy />
+      },
+      {
+        path: '/rooms',
+        element: <Landing />
+      },
+      {
+        path: "/room/:id",
+        element: <ChatRoom />
+      },
+    ]
+  }
+])
+
+function NavbarWrapper() {
+  return <>
+    <Welcome />
+    <Outlet />
+  </>
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+        <div className="container">
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+
     </div>
   );
 }
