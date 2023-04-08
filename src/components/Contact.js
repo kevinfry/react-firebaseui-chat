@@ -8,10 +8,7 @@ function Contact() {
     <h3>Contact Us</h3>
           <p>
             TicketDevs<br />
-            <a href="mailto:kevin@ticketdevs.com">kevin@ticketdevs.com</a><br />
-
-            c/o <a href="https://www.ticketsnatchers.com/" target="_blank" rel=noreferrer>Ticket Snatchers Tickets</a><br />
-            c/o <a href="https://shop.ticketsnatchers.com/" target="_blank" rel=noreferrer>Shop Ticket Snatchers</a><br />
+            kevin@ticketdevs.com<br />
 
             90 Rockland St<br />
             Suite 5E<br />

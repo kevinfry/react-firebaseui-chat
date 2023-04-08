@@ -1,0 +1,4 @@
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+ErrorDocument 403 https://ticketdevs.com/
+ErrorDocument 404 https://ticketdevs.com/
