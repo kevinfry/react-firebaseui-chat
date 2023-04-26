@@ -6,8 +6,6 @@ import {Landing} from "./components/Landing";
 import {ChatRoom} from "./components/ChatRoom";
 import React from "react";
 import Welcome from "./components/Welcome";
-import Privacy from "./components/Privacy";
-import Contact from "./components/Contact";
 
 const router = createBrowserRouter([
   {
@@ -17,14 +15,6 @@ const router = createBrowserRouter([
       {
         path: '/signin',
         element: <Signin />
-      },
-      {
-        path: '/contact',
-        element: <Contact />
-      },
-      {
-        path: '/privacy',
-        element: <Privacy />
       },
       {
         path: '/rooms',
